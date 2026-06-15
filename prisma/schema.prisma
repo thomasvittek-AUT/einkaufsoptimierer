@@ -1,0 +1,43 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// Ein Benutzer der App
+model User {
+  id            Int      @id @default(autoincrement())
+  email         String   @unique
+  name          String?
+  password      String
+  adresse       String?
+  createdAt     DateTime @default(now())
+
+  einkaufslisten Einkaufsliste[]
+}
+
+// Eine Einkaufsliste gehört zu einem Benutzer
+model Einkaufsliste {
+  id        Int      @id @default(autoincrement())
+  name      String
+  createdAt DateTime @default(now())
+
+  userId    Int
+  user      User     @relation(fields: [userId], references: [id])
+
+  produkte  Produkt[]
+}
+
+// Ein Produkt in einer Einkaufsliste
+model Produkt {
+  id              Int    @id @default(autoincrement())
+  name            String
+  menge           String?
+  einheit         String?
+
+  einkaufslisteId Int
+  einkaufsliste   Einkaufsliste @relation(fields: [einkaufslisteId], references: [id])
+}
