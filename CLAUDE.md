@@ -1,24 +1,43 @@
-# Projekt: [mein-erstes-projekt]
+# Projekt: Einkaufsoptimierer
 
 ## Ziel
-- Erstelle eine Web-App die eine digitale Einkaufsliste zu Verfügung stellt.
-- Die Einkaufsliste soll eine Import Funktion (excl., pdf, text, html) besitzen
-- Die Einkaufsliste soll wiederkehrende Produkte erkennen und den wöchentlichen Grundbedarf vorschlagen.
-- Die App soll Preise der umliegenden Supermärkte vergleichen und die beste Option vorschlagen
+- Web-App die aufgrund einer Einkaufsliste die günstigste Option (Supermärkte, Online-Shops) ermittelt.
+- Import von Cookiedoo-Einkaufslisten, PDF, Text, HTML.
+- Wiederkehrende Produkte erkennen und Grundbedarf vorschlagen.
+- Fahrtrouten und Zeitkosten in die Preisermittlung einbeziehen (Phase 4).
 
-## Tech-Stack (von Claude vorgeschlagen, hier festgehalten)
-- Frontend: [z. B. wird von Claude empfohlen – hier eintragen lassen]
-- Datenspeicher: [falls nötig]
+## Festgelegter Tech-Stack
+- Framework: Next.js 14 (LTS, stabil)
+- Datenbank: SQLite via Prisma 5 (stabil, kein Adapter nötig)
+- Login: NextAuth v4 (stabil)
+- Styling: Tailwind CSS 3
+- Sprache: JavaScript (kein TypeScript)
 
 ## Regeln für Claude Code
-- Schreibe einfachen, gut kommentierten Code (ich bin kein Programmierer).
+
+### Verhalten & Kommunikation
+- Schreibe einfachen, gut kommentierten Code (Nutzer ist kein Programmierer).
 - Erkläre Entscheidungen in 1–2 Sätzen auf Deutsch.
-- Frage nach, bevor du etwas Großes/Irreversibles tust.
-- Halte dich an den Stil-Skill unter .claude/skills/.
+- Frage nach, bevor du etwas Großes oder Irreversibles tust.
 - Mache nach jedem funktionierenden Stand einen Commit.
 
-## Was die App NICHT tun soll
-- 
+### PFLICHT: Analyse vor Aktion
+- Bevor du ein neues Paket installierst: Versionsnummern und Kompatibilität prüfen.
+- Bevor du einen Bug fixst: Ursache vollständig verstehen, nicht raten.
+- Bevor du Code schreibst: Kurz den Plan nennen und bestätigen lassen.
+- Nutze den Skill `/analyze-first` wenn du unsicher bist.
+
+### PFLICHT: Versionsstrategie
+- Immer LTS- oder stabile Releases wählen – NIEMALS Beta, RC oder die neueste Version ohne Prüfung.
+- Bei jedem neuen Paket prüfen: Funktioniert es mit den bereits installierten Versionen?
+- Nutze den Skill `/version-check` vor jeder Installation.
+
+### PFLICHT: Code-Review vor Commits
+- Vor jedem Commit den geänderten Code mit `/code-review` prüfen.
+- Bei größeren Features: `/code-review ultra` für Multi-Perspektiven-Review.
 
 ## Status / offene Punkte
-- [wird laufend aktualisiert]
+- Phase 1 abgeschlossen: Login, Registrierung, Dashboard ✅
+- Phase 2 offen: Einkaufslisten erstellen und verwalten
+- Phase 3 offen: Preisvergleich
+- Phase 4 offen: Fahrtrouten, Prognosen
