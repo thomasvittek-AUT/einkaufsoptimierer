@@ -38,6 +38,7 @@
 
 ## Status / offene Punkte
 - Phase 1 abgeschlossen: Login, Registrierung, Dashboard ✅
-- Phase 2 offen: Einkaufslisten erstellen und verwalten
-- Phase 3 offen: Preisvergleich
-- Phase 4 offen: Fahrtrouten, Prognosen
+- Phase 2 abgeschlossen: Einkaufslisten + Produkte erstellen/löschen ✅
+- Phase 3 offen: Import (Cookiedoo, PDF, Text, HTML), Grundbedarf
+- Phase 4 offen: Preisvergleich
+- Phase 5 offen: Fahrtrouten, Prognosen
